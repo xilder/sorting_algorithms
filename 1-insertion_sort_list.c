@@ -13,11 +13,11 @@ void insertion_sort_list(listint_t **list)
 
 	set = *list;
 	if (set == NULL || set->next == NULL)
-	       return;	
+		return;
 
 	set = set->next;
 	while (set != NULL)
-	{	
+	{
 		curr = set;
 		while (curr->prev != NULL && curr->n < curr->prev->n)
 		{
