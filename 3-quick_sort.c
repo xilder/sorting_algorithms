@@ -28,17 +28,17 @@ void quick(int *array, int left, int right, size_t size);
  */
 void quick(int *array, int left, int right, size_t size)
 {
-	int pivot;
+	int *pivot;
 	int i = left - 1, j;
 
 	if (left >= right)
 		return;
 
-	pivot = array[right];
+	pivot = array + right;
 
 	for (j = left; j < right; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] < *pivot)
 		{
 			i++;
 			if (i < j)
@@ -48,7 +48,7 @@ void quick(int *array, int left, int right, size_t size)
 			}
 		}
 	}
-	swap(array + i + 1, array + j);
+	swap(array + i + 1, pivot);
 	print_array(array, size);
 	quick(array, left, i, size);
 	quick(array, i + 2, right, size);
@@ -68,6 +68,3 @@ void quick_sort(int *array, size_t size)
 
 	quick(array, 0, size - 1, size);
 }
-
-
-
