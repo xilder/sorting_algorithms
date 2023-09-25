@@ -2,7 +2,7 @@
 
 /**
  * swap - Function that swaps two values
- * 
+ *
  * @a: First value
  * @b: Second value
  * Return: 0
@@ -30,6 +30,7 @@ void quick(int *array, int left, int right, size_t size)
 {
 	int pivot;
 	int i = left - 1, j;
+
 	if (left >= right)
 		return;
 
