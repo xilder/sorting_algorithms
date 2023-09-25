@@ -48,8 +48,11 @@ void quick(int *array, int left, int right, size_t size)
 			}
 		}
 	}
-	swap(array + i + 1, pivot);
-	print_array(array, size);
+	if (array[i + 1] > *pivot)
+	{
+		swap(array + i + 1, pivot);
+		print_array(array, size);
+	}
 	quick(array, left, i, size);
 	quick(array, i + 2, right, size);
 }
